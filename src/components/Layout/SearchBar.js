@@ -9,7 +9,7 @@ function SearchBar() {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    navigate("/search");
+    navigate(`/search/${searchValue.split(" ").join("-")}`);
     setSearchValue("");
   };
   return (

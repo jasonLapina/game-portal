@@ -2,6 +2,7 @@ import Layout from "./components/Layout/Layout";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/Home";
 import FilteredGames from "./pages/FilteredGames";
+import GameDetailPage from "./pages/GameDetailPage";
 
 const router = createBrowserRouter([
   {
@@ -9,16 +10,20 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: "/",
+        index: true,
         element: <HomePage />,
       },
       {
-        path: "/search",
-        element: <h1>THIS IS THE SEARCH PAGE</h1>,
+        path: "search/:query",
+        element: <FilteredGames />,
       },
       {
-        path: "/category/:category",
+        path: "category/:category",
         element: <FilteredGames />,
+      },
+      {
+        path: "game/:gameId",
+        element: <GameDetailPage />,
       },
     ],
   },

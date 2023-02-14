@@ -12,8 +12,10 @@ function Games({ games }) {
       gap='4px 8px'
     >
       {games.map((game) => {
-        const { title, thumbnail } = game;
-        return <SingleGame key={title} thumbnail={thumbnail} title={title} />;
+        const { title, thumbnail, id } = game;
+        return (
+          <SingleGame id={id} key={id} thumbnail={thumbnail} title={title} />
+        );
       })}
     </Grid>
   );

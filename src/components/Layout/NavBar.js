@@ -14,7 +14,7 @@ function NavBar() {
         paddingBlock='8px'
       >
         <Link to='/'>
-          <Heading as='a'>CloudArcade</Heading>
+          <Heading>CloudArcade</Heading>
         </Link>
 
         <Flex

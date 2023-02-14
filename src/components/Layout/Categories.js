@@ -22,14 +22,12 @@ function Categories() {
         <Flex gap='12px'>
           {dummyCategories.map((category) => {
             return (
-              <NavLink to={`/category/${category}`}>
+              <NavLink key={category} to={`/category/${category}`}>
                 <Button
                   style={{ background: curGenre == category ? "#A0AEC0" : "" }}
                   _hover={{ bg: "#A0AEC0" }}
                   borderRadius='16px'
-                  key={category}
                   variant='outline'
-                  as={"anchor"}
                 >
                   {category}
                 </Button>

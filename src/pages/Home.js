@@ -1,6 +1,6 @@
 import { Heading } from "@chakra-ui/react";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Games from "../components/Games/Games";
 
 function HomePage() {
@@ -17,21 +17,23 @@ function HomePage() {
     },
   };
 
-  axios.request(options).then((response) => {
-    const games = response.data;
-    const fetchedNewGames = games
-      .filter(
-        (game) =>
-          game.release_date.includes("2023") ||
-          Number(game.release_date.split("-")[1]) > 10
-      )
-      .slice(0, 12);
-    const fetchedPopularGames = games.slice(0, 12);
-    const fetchedYouMayLike = games.slice(24, 36);
-    setNewGames(fetchedNewGames);
-    setPopularGames(fetchedPopularGames);
-    setYouMayLikeGames(fetchedYouMayLike);
-  });
+  useEffect(() => {
+    axios.request(options).then((response) => {
+      const games = response.data;
+      const fetchedNewGames = games
+        .filter(
+          (game) =>
+            game.release_date.includes("2023") ||
+            Number(game.release_date.split("-")[1]) > 10
+        )
+        .slice(0, 12);
+      const fetchedPopularGames = games.slice(0, 12);
+      const fetchedYouMayLike = games.slice(24, 36);
+      setNewGames(fetchedNewGames);
+      setPopularGames(fetchedPopularGames);
+      setYouMayLikeGames(fetchedYouMayLike);
+    });
+  }, []);
 
   return (
     <>
