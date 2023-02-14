@@ -1,5 +1,5 @@
 import { Box, Flex, Button, HStack } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 
 function Categories() {
   const dummyCategories = [
@@ -14,6 +14,8 @@ function Categories() {
     "Horror",
   ];
 
+  const curGenre = useParams().category;
+
   return (
     <Box boxShadow='xl' p='6' rounded='md'>
       <HStack justifyContent='space-between' margin='0 auto' maxW='1200px'>
@@ -22,6 +24,7 @@ function Categories() {
             return (
               <NavLink to={`/category/${category}`}>
                 <Button
+                  style={{ background: curGenre == category ? "#A0AEC0" : "" }}
                   _hover={{ bg: "#A0AEC0" }}
                   borderRadius='16px'
                   key={category}
