@@ -15,8 +15,8 @@ function Footer() {
     },
   ];
   return (
-    <>
-      <Box w='100%' bgColor='#2C3E50'>
+    <Box w='100%'>
+      <Box bgColor='#2C3E50'>
         <Flex gap='40px' maxW='1200px' margin='0 auto'>
           {dummyFooter.map((footer) => {
             return (
@@ -30,10 +30,10 @@ function Footer() {
           })}
         </Flex>
       </Box>
-      <Center paddingBlock='24px' color='white' w='100%' bgColor='#1A252F'>
+      <Center paddingBlock='24px' color='white' bgColor='#1A252F'>
         Jason Lapina © 2023. All rights reserved. v1.0.0
       </Center>
-    </>
+    </Box>
   );
 }
 

@@ -4,12 +4,12 @@ import Footer from "./Footer";
 import NavBar from "./NavBar";
 import { Outlet } from "react-router-dom";
 
-function Layout({ children }) {
+function Layout() {
   return (
     <>
       <NavBar />
       <Categories />
-      <Box margin='56px auto' as='main' maxW='1300px'>
+      <Box margin='80px auto' as='main' maxW='1300px'>
         <Outlet />
       </Box>
       <Footer />
