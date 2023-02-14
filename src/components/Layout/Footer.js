@@ -20,7 +20,7 @@ function Footer() {
         <Flex gap='40px' maxW='1200px' margin='0 auto'>
           {dummyFooter.map((footer) => {
             return (
-              <VStack color='white' paddingBlock='48px'>
+              <VStack key={footer.title} color='white' paddingBlock='48px'>
                 <Heading letterSpacing='2px' fontWeight='600'>
                   {footer.title}
                 </Heading>
@@ -31,7 +31,7 @@ function Footer() {
         </Flex>
       </Box>
       <Center paddingBlock='24px' color='white' w='100%' bgColor='#1A252F'>
-        Jason Lapina © 2023. All rights reserved. v69.420.1
+        Jason Lapina © 2023. All rights reserved. v1.0.0
       </Center>
     </>
   );

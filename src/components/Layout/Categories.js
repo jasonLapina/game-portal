@@ -1,16 +1,17 @@
 import { Box, Flex, Button, HStack } from "@chakra-ui/react";
+import { NavLink } from "react-router-dom";
 
 function Categories() {
   const dummyCategories = [
-    ".IO",
-    "2 Player",
+    "2D",
     "3D",
     "Action",
-    "Adventure",
-    "Arcade",
-    "Bejeweled",
-    "Classics",
-    "Clicker",
+    "Anime",
+    "Shooter",
+    "Strategy",
+    "Superhero",
+    "Sports",
+    "Horror",
   ];
 
   return (
@@ -19,14 +20,17 @@ function Categories() {
         <Flex gap='12px'>
           {dummyCategories.map((category) => {
             return (
-              <Button
-                _hover={{ bg: "#A0AEC0" }}
-                borderRadius='16px'
-                key={category}
-                variant='outline'
-              >
-                {category}
-              </Button>
+              <NavLink to={`/category/${category}`}>
+                <Button
+                  _hover={{ bg: "#A0AEC0" }}
+                  borderRadius='16px'
+                  key={category}
+                  variant='outline'
+                  as={"anchor"}
+                >
+                  {category}
+                </Button>
+              </NavLink>
             );
           })}
         </Flex>

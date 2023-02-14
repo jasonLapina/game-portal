@@ -1,14 +1,6 @@
-import { Search2Icon } from "@chakra-ui/icons";
-import {
-  Box,
-  Button,
-  Flex,
-  Heading,
-  HStack,
-  Input,
-  InputGroup,
-  InputRightElement,
-} from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, HStack } from "@chakra-ui/react";
+import SearchBar from "./SearchBar";
+import { Link } from "react-router-dom";
 
 function NavBar() {
   const dummyNavs = ["Blog", "Dropdown", "Sample page", "Login"];
@@ -21,7 +13,10 @@ function NavBar() {
         justifyContent='space-between'
         paddingBlock='8px'
       >
-        <Heading>CloudArcade</Heading>
+        <Link to='/'>
+          <Heading as='a'>CloudArcade</Heading>
+        </Link>
+
         <Flex
           fontWeight='500'
           gap='16px'
@@ -40,10 +35,7 @@ function NavBar() {
               </Button>
             );
           })}
-          <InputGroup maxW='32%'>
-            <Input placeholder='Search game' />
-            <InputRightElement children={<Search2Icon />} />
-          </InputGroup>
+          <SearchBar />
         </Flex>
       </HStack>
     </Box>
