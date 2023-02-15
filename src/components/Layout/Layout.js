@@ -9,7 +9,7 @@ function Layout() {
     <>
       <NavBar />
       <Categories />
-      <Box margin='80px auto' as='main' maxW='1300px'>
+      <Box margin='80px auto' as='main' minH='320px' maxW='1300px'>
         <Outlet />
       </Box>
       <Footer />

@@ -24,8 +24,11 @@ function Categories() {
             return (
               <NavLink key={category} to={`/category/${category}`}>
                 <Button
-                  style={{ background: curGenre == category ? "#A0AEC0" : "" }}
-                  _hover={{ bg: "#A0AEC0" }}
+                  style={{
+                    background: curGenre == category ? "#A0AEC0" : "",
+                    color: curGenre == category ? "white" : "",
+                  }}
+                  _hover={{ bg: "#A0AEC0", color: "white" }}
                   borderRadius='16px'
                   variant='outline'
                 >
